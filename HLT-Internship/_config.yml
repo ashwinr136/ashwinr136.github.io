@@ -14,7 +14,7 @@ name                     : &name "Ashwin Raj"
 description              : &description "Summer 2024 Internship"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/HLT-Internship"
-repository               : "academicpages/academicpages.github.io"
+repository               : "ashwinr136/ashwinr136.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
