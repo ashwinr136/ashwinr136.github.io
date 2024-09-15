@@ -26,22 +26,17 @@ def predict_invention_category(title, description, background):
     new_counts = vectorizer_bow.transform([new_text])
 
     predicted_category = nb_bow.predict(new_counts)
-
-    #print(f"Predicted Category: {predicted_category[0]}")
     return predicted_category[0]
 
 def generate_search_links(description, top_n=5):
-    # Initialize KeyBERT model
     kw_model = KeyBERT()
-    
-    # Extract keywords
     keywords = kw_model.extract_keywords(description, keyphrase_ngram_range=(1, 2), stop_words='english', top_n=top_n)
     market_keywords = kw_model.extract_keywords(description, keyphrase_ngram_range=(1, 2), stop_words='english', top_n=2)
-    # Generate Google search URL
+
     google_query = 'market overview ' + ' '.join([kw for kw, _ in keywords])
     google_search_url = f"https://www.google.com/search?q={urllib.parse.quote(google_query)}"
     query = ' '.join([kw for kw, _ in market_keywords])
-    # Generate market research report URLs
+
     websites = [
         ("ResearchGate", f"https://www.researchgate.net/search.Search.html?type=publication&query={urllib.parse.quote(query)}"),
         ("Globe News Wire", f"https://www.globenewswire.com/en/search/keyword/{urllib.parse.quote(query)}?pageSize=50"),
@@ -56,13 +51,11 @@ def generate_search_links(description, top_n=5):
 
 st.title('Invention Categorizer and Market Research Helper Tool')
 
-# User inputs for Title, Description, and Background
 title = st.text_input("Enter Invention Title")
 description = st.text_area("Enter Invention Description", height=150)
 background = st.text_area("Enter Invention Background", height=150)
 
 if st.button('Generate Keywords and Links'):
-    # Concatenate title, description, and background
     combined_text = f"{title} {description} {background}".strip()
     
     if combined_text:
@@ -78,7 +71,7 @@ if st.button('Generate Keywords and Links'):
         st.write(f"[Google Search]({google_search_url})")
         
         st.subheader('Market Research Report Links:')
-        # Safely iterate over report links and ensure they are correctly formatted
+
         for report in report_links:
             if len(report) == 2:
                 name, url = report
