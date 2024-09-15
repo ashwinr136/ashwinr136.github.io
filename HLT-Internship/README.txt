@@ -1,31 +1,14 @@
-Solid State by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*This page serves as the repository for my Summer 2024 HLT Internship at Tech Launch Arizona. (LING 593A)*
 
+The code I wrote for web scraping and text preprocessing to create my dataset can be seen in data_collection.ipynb.
 
-After a somewhat extended break from HTML5 UP (to work on a secret-ish new project --
-more on that later!) I'm back with a brand new design: Solid State, a slick new multi-
-pager that combines some of the ideas I've played with over at Pixelarity with an "angular"
-sort of look. Hope you dig it :)
+The code for model creation and evaluation can be seen in model_eval.ipynb.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+The code for data visualization can be seen in visualization.ipynb.
 
-(* = not included)
+The dataset I created is cleaned_inventions_dataset.csv.
 
-AJ
-aj@lkn.io | @ajlkn
+My internship report can be read [here](https://ashwinr136.github.io/HLT-Internship/index.html) (index.html.)
 
+The GUI can be tested [here](https://ashwinr136-hlt-internship.streamlit.app/).
 
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
