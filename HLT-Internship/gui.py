@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from nltk.corpus import stopwords
 import streamlit as st
 
-df = pd.read_csv('cleaned_inventions_dataset1_copy.csv')
+df = pd.read_csv('cleaned_inventions_dataset.csv')
 df['text'] = df['Invention'] + " " + df['Description'] + " " + df['Background']
 X = df['text']
 y = df['Category']
