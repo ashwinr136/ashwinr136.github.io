@@ -1,0 +1,8 @@
+streamlit
+pandas
+scikit-learn
+numpy
+keybert
+nltk
+sentence-transformers
+urllib3
