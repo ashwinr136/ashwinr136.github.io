@@ -1,4 +1,4 @@
-*This page serves as the repository for my Summer 2024 HLT Internship at Tech Launch Arizona. (LING 593A)*
+**This page serves as the repository for my Summer 2024 HLT Internship at Tech Launch Arizona. (LING 593A)**
 
 The code I wrote for web scraping and text preprocessing to create my dataset can be seen in data_collection.ipynb.
 
