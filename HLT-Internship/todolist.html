@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Ashwin Raj LING 508 Course Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+
+			<div id="page-wrapper">
+
+
+					<header id="header" class="alt">
+						<h1><a href="todolist.html">Study Helper Tool</a></h1>
+						<nav>
+							<a href="#menu">Navigate</a>
+						</nav>
+					</header>
+
+
+					<nav id="menu">
+						<div class="inner">
+							<h2>Navigate</h2>
+							<ul class="links">
+								<li><a href="about.html">Home</a></li>
+								<li><a href="#four">Introduction</a></li>
+								<li><a href="#five">To-Do List</a></li>
+								<li><a href="#six">Links</a></li>
+								<li><a href="#seven">Motivation</a></li>
+								<li><a href="#eight">Summary</a></li>
+								<li><a href="#twelve">Code and Link to Webpage</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+
+					<section id="banner">
+						<div class="inner">
+							<h2>Study Helper Tool</h2>
+							<p>Ashwin Raj</p>
+							<p>LING 508 Course Project</p>
+						</div>
+					</section>
+
+
+					<section id="wrapper">
+
+
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/ashwin.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Ashwin Raj</h2>
+										<p>I am a student in the M.S. in Human Language Technology program at the University of Arizona. I am a student employee at Tech Launch Arizona, working as a Market Research Associate. I did my internship this summer with Tech Launch Arizona. This page serves as the report of the work I have accomplished.</p>
+
+									</div>
+								</div>
+							</section>
+
+
+							
+
+
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Introduction</h2>
+									<p>For my course project, I created a Study Helper tool with different tabs to demonstrate the skills I learned in class. My study buddy / to-do list helper tool is written in HTML and Javascript. The goal of the tool was to provide a dynamically updating webpage to assist users in organizing their tasks, searching for online resources, and staying motivated.</p>
+									
+								</div>
+							</section>
+							
+							<section id="five" class="wrapper alt style2">
+								<div class="inner">
+									<h2 class="major">To-Do List</h2>
+									<p>The first part of the tool, and the homepage, is a to-do list. My goal was to have the user be able to input items onto their list that would then appear on the screen. I also wanted them to be able to delete items if needed. I used an input text form as the element where the user can write their task, and an add button to add it to the list. Each added task appears with a checkbox on the left, to indicate if the task is completed; and a red X on the right, which if pressed will remove the task from the list. I also wanted to make it clearer when a task was complete, so in addition to the checkbox being ticked, if it is ticked I made it so that the text is crossed out, similar to a physical to-do list. </p>
+									<p>In class we discussed integrating JavaScript to HTML, and we looked at a gauge tool that can visually display the "weight" of a number on a given scale. I wanted to add this functionality to my to-do list, that could display to the user the percentage of tasks that are complete. I included the JustGage script (https://toorshia.github.io/justgage/) to do this. However, I ran into a problem where if the user were to add tasks after already checking certain tasks off, the gauge would not recognize the change in completion percentage and would still display the old percentage. To fix this, I added some event listeners that would keep track of any changes in the tasks. I wrote a function to update the completion percentage and if a task was created, deleted, or modified, the completion percentage and thus the gauge would be dynamically updated. </p>
+								</div>
+							</section>
+							
+							<section id="six" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Links</h2>
+									<p>The next part of the tool is a Links tab. The goal of this tab was to provide a way for the user to type anything they want to learn about, and the page would be a consolidated hub of useful URLs related to the input. I used a text input form and a button where the user can type their query and search. I wrote a function generateWebLink() that takes this string query and encodes it into a search query URL for websites such as Google, Reddit, and Wolfram-Alpha. The results with the URLs are shown on the page, and in the case of a new query it will refresh.</p>
+									
+									
+									<br>
+									<a href="#" class="image"><img src="images/htmlsnippet.png" alt="" style="width: 800px; height: auto;"/></a>
+									<br>
+									<br>
+									
+									
+
+
+								
+								</div>
+							</section>
+							
+							<section id="seven" class="wrapper alt style2">
+								<div class="inner">
+									<h2 class="major">Motivation</h2>
+									<p>The third part of the tool is a Motivation tab. This will display a random motivational quote and image. I did this through a function getPic(), which used the Math library to get a random integer in the range of the length of the array of phrases and image links, respectively.</p>
+								</div>
+							</section>
+							
+							<section id="eight" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Summary</h2>
+									<p>This project was a useful way to strengthen my HTML and JavaScript skills, which are essential in building web applications. I learned more about how to dynamically update content on a webpage using event listeners. The experience gained through this project has also improved my ability to develop front-end interfaces and manage user interactions. The integration of external libraries like JustGage further enhanced the complexity of the project and demonstrated adaptability in working with third-party tools, which is frequently done in NLP tasks with libraries such as spaCy or scikit-learn. Working on the Links tab gave me a foundation for reading in user text input, parsing it, and potentially modifying it to work with external tools. This was directly useful in my HLT internship, where I had to use NLP tools to extract keywords from a document and return useful market research hyperlinks based on them. Overall, this was a fun experience to apply my course learning to something that could be useful for enhancing studying and productivity.</p>
+									
+								</div>
+							</section>
+
+							
+							
+							<section id="twelve" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Code and Link to Webpage</h2>
+									<p>My GitHub repository with my code can be found here: 
+										<a href="https://github.com/ashwinr136/ashwinr136.github.io/tree/main/HLT-Internship" target="_blank">
+											GitHub Repository
+										</a>
+									</p>
+									<p>The webpage can be viewed here:
+										<a href="https://github.com/ashwinr136/ashwinr136.github.io/tree/main/HLT-Internship" target="_blank">
+											GitHub Repository
+										</a>
+									</p>
+								</div>
+							</section>
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							
+							<ul class="copyright">
+								<li>Contact me: <a href="mailto:ashwinr136@gmail.com" target="_blank">E-mail</a></li><li><a href="https://www.linkedin.com/in/ashwin-raj-056140181/">LinkedIn</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
