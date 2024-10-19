@@ -29,8 +29,8 @@
 								<li><a href="about.html">Home</a></li>
 								<li><a href="#four">Introduction</a></li>
 								<li><a href="#five">To-Do List</a></li>
-								<li><a href="#six">Links</a></li>
-								<li><a href="#seven">Motivation</a></li>
+								<li><a href="#six">Links Tab</a></li>
+								<li><a href="#seven">Motivation Tab</a></li>
 								<li><a href="#eight">Summary</a></li>
 								<li><a href="#twelve">Code and Link to Webpage</a></li>
 							</ul>
@@ -77,20 +77,28 @@
 							<section id="five" class="wrapper alt style2">
 								<div class="inner">
 									<h2 class="major">To-Do List</h2>
-									<p>The first part of the tool, and the homepage, is a to-do list. My goal was to have the user be able to input items onto their list that would then appear on the screen. I also wanted them to be able to delete items if needed. I used an input text form as the element where the user can write their task, and an add button to add it to the list. Each added task appears with a checkbox on the left, to indicate if the task is completed; and a red X on the right, which if pressed will remove the task from the list. I also wanted to make it clearer when a task was complete, so in addition to the checkbox being ticked, if it is ticked I made it so that the text is crossed out, similar to a physical to-do list. </p>
-									<p>In class we discussed integrating JavaScript to HTML, and we looked at a gauge tool that can visually display the "weight" of a number on a given scale. I wanted to add this functionality to my to-do list, that could display to the user the percentage of tasks that are complete. I included the JustGage script (https://toorshia.github.io/justgage/) to do this. However, I ran into a problem where if the user were to add tasks after already checking certain tasks off, the gauge would not recognize the change in completion percentage and would still display the old percentage. To fix this, I added some event listeners that would keep track of any changes in the tasks. I wrote a function to update the completion percentage and if a task was created, deleted, or modified, the completion percentage and thus the gauge would be dynamically updated. </p>
+									<p>The first part of the tool, which also serves as the homepage, is the to-do list. My goal was to create an interactive list where users could easily input, manage, and delete tasks. This to-do list is structured in such a way that users can type their tasks into a text input form and then click an "add" button to add the item to their list. Once added, each task is displayed with two features: a checkbox on the left, indicating whether the task is completed, and a red "X" on the right to remove the task. I wanted the user to clearly see when a task was complete, so I added a feature that automatically crosses out the text of a task once it is marked complete. This mimics a physical to-do list, giving the user a sense of accomplishment as they visually track their progress. </p>
+									<br>
+									<a href="#" class="image"><img src="images/todo1.png" alt="" style="width: 800px; height: auto;"/></a>
+									<br>
+									<p>In class we discussed integrating JavaScript to HTML to create interactive web applications, and we were introduced to a gauge tool that can visually display the "weight" of a number on a given scale. I wanted to add this functionality to my to-do list, that could display to the user the percentage of tasks that are complete. I included the (<a href="https://toorshia.github.io/justgage/">JustGage script</a>) to do this. However, I ran into a problem related to dynamic updating of the gauge. Initially, if the user were to add tasks after already checking certain tasks off, the gauge would not recognize the change in completion percentage and would still display the old percentage. To fix this, I added some event listeners that would keep track of any changes in the tasks - addition, deletion, and completion status. I wrote a function to update the completion percentage and if a task was created, deleted, or modified, the completion percentage and thus the gauge would be dynamically updated. </p>
+									<br>
+									<a href="#" class="image"><img src="images/todo2.png" alt="" style="width: 800px; height: auto;"/></a>
+									<br>
 								</div>
 							</section>
 							
 							<section id="six" class="wrapper alt style1">
 								<div class="inner">
-									<h2 class="major">Links</h2>
-									<p>The next part of the tool is a Links tab. The goal of this tab was to provide a way for the user to type anything they want to learn about, and the page would be a consolidated hub of useful URLs related to the input. I used a text input form and a button where the user can type their query and search. I wrote a function generateWebLink() that takes this string query and encodes it into a search query URL for websites such as Google, Reddit, and Wolfram-Alpha. The results with the URLs are shown on the page, and in the case of a new query it will refresh.</p>
+									<h2 class="major">Links Tab</h2>
+									<p>The next feature of the Study Helper tool is the Links tab, which helps users quickly search for online resources related to a query. The goal of this tab was to provide a way for the user to type anything they want to learn about, and the page would be a consolidated hub of useful URLs related to the input. I used a text input form and a button where the user can type their query and search. I wrote a function generateWebLink() that takes this string query and encodes it into a search query URL for websites such as Google, Reddit, and Wolfram-Alpha (These platforms were chosen because of their relevance to different "flavors" of searches — Google for general information, Reddit for community-driven insights, and WolframAlpha for more technical or mathematical queries). The results with the URLs are shown on the page, and in the case of a new query it will refresh.</p>
 									
 									
 									<br>
-									<a href="#" class="image"><img src="images/htmlsnippet.png" alt="" style="width: 800px; height: auto;"/></a>
+									<a href="#" class="image"><img src="images/todo3.png" alt="" style="width: 800px; height: auto;"/></a>
 									<br>
+									<br>
+									<p>This tool simulates the first steps of natural language processing, where user input is captured and converted into something meaningful that external tools can understand. Although basic, this skill set transfers directly to more complex NLP tasks, such as query parsing or keyword extraction, which I have gone on to apply in other projects.</p>
 									<br>
 									
 									
@@ -102,8 +110,10 @@
 							
 							<section id="seven" class="wrapper alt style2">
 								<div class="inner">
-									<h2 class="major">Motivation</h2>
-									<p>The third part of the tool is a Motivation tab. This will display a random motivational quote and image. I did this through a function getPic(), which used the Math library to get a random integer in the range of the length of the array of phrases and image links, respectively.</p>
+									<h2 class="major">Motivation Tab</h2>
+									<p>The third part of the tool is a Motivation tab. This will display a random motivational quote and image. To implement this, I created two arrays — one containing a selection of motivational quotes and the other a list of image URLs. I wrote a function called getPic() which, by using the Math library, gets a random integer in the range of the length of the array of phrases and image links, which were then used to index into the respective arrays and retrieve an image and a quote.</p>
+									<br>
+									<a href="#" class="image"><img src="images/todo4.png" alt="" style="width: 800px; height: auto;"/></a>
 								</div>
 							</section>
 							
@@ -127,7 +137,7 @@
 									</p>
 									<p>The webpage can be viewed here:
 										<a href="https://github.com/ashwinr136/ashwinr136.github.io/tree/main/HLT-Internship" target="_blank">
-											GitHub Repository
+											Study Helper Tool
 										</a>
 									</p>
 								</div>

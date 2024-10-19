@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy</title>
+    <link rel="stylesheet" type="text/css" href="todostyles.css">
+</head>
+<body>
+	<div class="tab">
+	<button class="tablinks" onclick="openTool(event, 'TodoList')">Todo List</button>
+	<button class="tablinks" onclick="openTool(event, 'Links')">Links</button>
+	<button class="tablinks" onclick="openTool(event, 'Motivation')">Motivation</button>
+	</div>
+	<div id="TodoList" class="tabcontent">
+    <div class="todo-container">
+        <h1>To-Do List</h1>
+        <input type="text" id="task-input" placeholder="Enter a new task...">
+        <button id="add-task-button">Add</button>
+        <div>
+            <p> <span id="completed-count">0</span></p>
+            <p> <span id="total-count">0</span></p>
+            <p> <span id="completion-percentage">0.00%</span></p>
+        </div>
+        <ul id="task-list"></ul>
+		<div class="gauge-container">
+		<div id="g1" class="gauge" style="width:270px; height:400px"></div>
+	</div>
+    </div>
+	
+
+	</div>
+	
+	<div id="Links" class="tabcontent">
+		<div class="links-container">
+		<label for="userInput" style="font-weight:bold;font-size:24px;">Type something you want to learn about:</label><br>
+		<input type="text" id="userInput" style="width: 40%;">
+		<button onclick="generateWebLink()">Go!</button>
+		<div id="result"></div>
+		</div>
+	</div>
+	
+	<div id="Motivation" class="tabcontent" style="text-align: center;">
+		<div id="quote">
+		<p id="quote-text"></p>
+		<br>
+		<div id="image-container"></div>
+		</div>
+	</div>
+	
+    <script src="todoscript.js"></script>
+	<script src="raphael-2.1.4.min.js"></script>
+	<script src="justgage.js"></script>
+	<script>
+	function openTool(evt, tool) {
+
+		var i, tabcontent, tablinks;
+
+
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+
+
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+
+		document.getElementById(tool).style.display = "block";
+		evt.currentTarget.className += " active";
+		
+	}
+	
+	function generateWebLink() {
+		var userInput = document.getElementById('userInput').value;
+
+		var google = "https://www.google.com/search?q=" + encodeURIComponent(userInput);
+		var bing = "https://www.bing.com/search?q=" + encodeURIComponent(userInput);
+		var reddit = "https://www.reddit.com/search?q=" + encodeURIComponent(userInput) + "&include_over_18=off&sort=relevance&t=all";
+		var wolfram = "https://www.wolframalpha.com/input?i=" + encodeURIComponent(userInput);
+		var resultContainer = document.getElementById('result');
+		resultContainer.innerHTML = '<br><p>Here are some relevant links that may help:</p>';
+		resultContainer.innerHTML += '<br><p>Google: <a href="' + google + '" target="_blank">' + google + '</a></p>';
+		resultContainer.innerHTML += '<p>Bing: <a href="' + bing + '" target="_blank">' + bing + '</a></p>';
+		resultContainer.innerHTML += '<p>Reddit: <a href="' + reddit + '" target="_blank">' + reddit + '</a></p>';
+		resultContainer.innerHTML += '<p>Wolfram: <a href="' + wolfram + '" target="_blank">' + wolfram + '</a></p>';
+		
+	}
+	const motivationalPhrases = [
+  "Believe you can and you're halfway there.",
+  "The only limit to our realization of tomorrow will be our doubts of today.",
+  "Don't watch the clock; do what it does. Keep going.",
+  "Your time is limited, don't waste it living someone else's life.",
+  "The only way to do great work is to love what you do.",
+  "It always seems impossible until it's done.",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+  "Your attitude, not your aptitude, will determine your altitude.",
+  "The only place where success comes before work is in the dictionary.",
+  "You are never too old to set another goal or to dream a new dream.",
+  "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.",
+  "Success usually comes to those who are too busy to be looking for it.",
+  "The road to success and the road to failure are almost exactly the same.",
+  "The only way to achieve the impossible is to believe it is possible.",
+  "Don't be afraid to give up the good to go for the great.",
+  "If you want to achieve greatness stop asking for permission.",
+  "Success is stumbling from failure to failure with no loss of enthusiasm.",
+  "Don't let yesterday take up too much of today.",
+  "You learn more from failure than from success. Don’t let it stop you. Failure builds character.",
+  "The only person you are destined to become is the person you decide to be."
+	];
+	
+	const picUrls = [
+	"https://purr.objects-us-east-1.dream.io/i/20160824_163805-1.jpg",
+	"https://purr.objects-us-east-1.dream.io/i/fa3qi.jpg",
+	"https://purr.objects-us-east-1.dream.io/i/IMG00327-20110526-1047.jpg",
+	"https://random.dog/20549-24554-21155.jpg",
+	"https://random.dog/a3be892d-c184-4722-99ab-3478e6d2cee4.jpg",
+	"https://random.dog/b22eace4-3f04-4228-a078-9d1c10042eaf.jpg",
+	"https://random.dog/0d3995ae-4b84-43f9-bd01-4e58e3b548d5.jpg",
+	"https://random.dog/8a522bb9-318c-4cd5-a7e8-39eb5821f8a7.png",
+	"https://www.regionalservices.co.uk/wp-content/uploads/2023/04/office-cat-1024x685.jpeg",
+	"https://i.redd.it/g9fs0jd8hgs71.jpg",
+	"https://i.guim.co.uk/img/media/20098ae982d6b3ba4d70ede3ef9b8f79ab1205ce/0_0_969_1005/master/969.jpg?width=620&quality=85&auto=format&fit=max&s=2a2baf6cf8f918ef763bb105f98f4cc0",
+	"https://i.pinimg.com/originals/38/1b/3e/381b3e8b5c4a2a6f4d08df8f3a8464dd.jpg"
+	];
+	
+	function getQuote() {
+
+		var randomMotivationalPhrase = motivationalPhrases[Math.floor(Math.random() * motivationalPhrases.length)];
+		const quotetext = document.getElementById('quote-text');
+		quotetext.textContent = randomMotivationalPhrase;
+		
+	}
+	getQuote();
+	
+	function getPic() {
+		var randomPic = picUrls[Math.floor(Math.random() * picUrls.length)];
+		const imageContainer = document.getElementById('image-container');
+    
+		const imageElement = document.createElement('img');
+		imageElement.src = randomPic;
+		imageElement.style.maxHeight = '500px'; 
+    
+		imageContainer.innerHTML = '';
+		imageContainer.appendChild(imageElement);
+	}
+	
+	getPic();
+	
+	document.addEventListener('DOMContentLoaded', function () {
+		openTool(event, 'TodoList'); 
+	});
+	</script>
+	
+</body>
+</html>
