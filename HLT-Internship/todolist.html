@@ -86,9 +86,11 @@
 									<br>
 									<a href="#" class="image"><img src="images/script1.png" alt="" style="width: 800px; height:auto;"/></a>
 									<br>
+									<br>
 									<p>The checkbox was implemented by appending the taskCheckbox item to the &lt;li&gt; element taskItem, which represents an individual task. The EventListener is what keeps track of any changes to the status of the task item, which is triggered when the checkbox is checked or unchecked. When the checkbox is checked, the associated task text (taskLabel) is crossed out using CSS. After a checkbox state change, the functions updateCompletionStatistics() and updateGauge() are called, which update the completed and total task counts and percentage, and refresh the gauge to reflect the new completion percentage.</p>
 									<br>
 									<a href="#" class="image"><img src="images/script2.png" alt="" style="width: 800px; height:auto;"/></a>
+									<br>
 									<br>
 									<p>The gauge is dynamically refreshed using these event listeners. For all events that involve a change in the number of total tasks and completed tasks, I made sure to update the respective variables and use my updateCompletionStatistics() function which calculates the completion percentage based on these variables. The checkbox event listener does not update the totalTasks variable because whether a task is checked or not does not affect the total number of tasks; rather, it only affects the completedTasks variable. When a task is checked, the completedTasks variable is decremented, and when a task is unchecked, the variable is incremented. The only actions that can change the totalTasks variable are adding a task (clicking the Add Task button) and removing a task (clicking the red X button). The updateGauge() function uses JustGage's refresh() function to redisplay the gauge with the new completion percentage.</p>
 									<a href="#" class="image"><img src="images/todo2.png" alt="" style="width: 800px; height: auto;"/></a>
